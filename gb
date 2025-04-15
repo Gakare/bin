@@ -1,0 +1,9 @@
+#!/bin/sh
+if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
+    echo "Please initialize tmux"
+    exit 0
+fi
+cd ~/books
+zathura "$(fzf)"
+cd -
+unset $cwd
